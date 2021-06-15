@@ -1,0 +1,1 @@
+// *Ovde se obradju podaci o korisniku (da li je ulogovan koja rola vazi itd)
