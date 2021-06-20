@@ -1,7 +1,7 @@
 {
   "name": "projekat-backend",
   "version": "1.0.0",
-  "description": "Ovo je bekend deo projekta iy predmeta administriranje baye podataka.",
+  "description": "Ovo je bekend deo projekta iz predmeta baze podataka",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,14 @@
   "author": "Denic Milos Rer 27/18, Todorovic Andrija Rer 52/18, Naskovic Milos Rer 6/18",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }

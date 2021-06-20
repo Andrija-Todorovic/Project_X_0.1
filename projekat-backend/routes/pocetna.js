@@ -1,13 +1,19 @@
 const express = require('express');
+
+// Koristi express
 const router = express.Router();
 
-//Prikazuje pocetnu stranu
+// !RUTE
+// Prikazi sve kafice
 router.get('/', (req, res) => {
     res.render('pocetna', {
-      title: 'Pocetna',
-      style: 'pocetna.css',
-      js: ''
+        title: 'Pocetna',
+        style: '',
+        js: ''
     });
-  });
+});
+
+
+
 
 module.exports = router;

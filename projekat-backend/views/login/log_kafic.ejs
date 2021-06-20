@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <h1>Uloguj se kao kafic</h1>
+
+    <form action="/login/log_kafic" method="POST" style="width: 40%;">
+        <div class="form-group mb-3">
+          <label for="kafic_email" class="form-label">Email adresa</label>
+          <input type="email" class="form-control" id="email" name="kafic_email">
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="kafic_sifra" class="form-label">Sifra</label>
+          <input type="password" class="form-control" id="kafic_sifra">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+</div>

@@ -1,46 +1,45 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const bodyParser = require('body-parser');
 
-// Putanja do fajla sa rutom
+// .env data
+const port = process.env.PORT
+
+// !Putanja do fajla sa rutom
 var pocetna = require('./routes/pocetna');
 var kafici = require('./routes/kafici');
-var restorani = require('./routes/restorani');
+// Rute za registraciju
+var registracija = require('./routes/registracija/registracija');
+var reg_kafic = require('./routes/registracija/reg_kafic');
+var reg_korisnik = require('./routes/registracija/reg_korisnik');
+// Rute za login
+var login = require('./routes/login/login');
+var log_kafic = require('./routes/login/log_kafic')
+var log_korisnik = require('./routes/login/log_korisnik');
 
-// Korisni express 
-const app = express()
+// Koristi express
+const app = express();
 
-//.env data
-const port = process.env.PORT;
+// Body-parser
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // View engine
-app.engine('ejs', ejsMate); //Koristi se za kreiranje templejta u ejs (boilerplate nece raditi bez njega)
+app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
 
-//routes
+// Rute
 app.use('/', pocetna);
 app.use('/kafici', kafici);
-app.use('/restorani', restorani);
+app.use('/registracija', registracija, reg_kafic, reg_korisnik);
+app.use('/login', login, log_kafic, log_korisnik);
 
 // Port na kome slusa
 app.listen(port, () => {
-  console.log(`Server listen at port ${port}`)
-});
-
-/* Planirane rute za pocetak
-    pocetna 
-    restorani 
-    resotrani/:id
-    restorani/:id/rezervacija 
-    kafici 
-    kafici/:id/
-    kafici/:id/rezervacija
-    login
-    registracija/korisnik
-    registracija/poslodavac 
-    log out 
-*/
+    console.log(`Server slusa na portu ${port}`);
+})
