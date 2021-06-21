@@ -1,19 +1,23 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="container">
+  <form action="/login/log_kafic" method="POST" class="needs-validation" novalidate>
     <h1>Uloguj se kao kafic</h1>
 
-    <form action="/login/log_kafic" method="POST" style="width: 40%;">
-        <div class="form-group mb-3">
-          <label for="kafic_email" class="form-label">Email adresa</label>
-          <input type="email" class="form-control" id="email" name="kafic_email">
-        </div>
+    <!-- Email -->
+    <div class="form-group">
+      <label for="kafic_email">E-mail</label>
+      <input type="email" class="form-control" id="kafic_email" name="kafic_email" required>
+    </div>
+      
+    <!-- Sifra -->
+    <div class="form-group">
+        <label for="kafic_sifra">Sifra</label>
+        <input type="password" class="form-control" id="kafic_sifra" name="kafic_sifra" required>
+    </div>
 
-        <div class="form-group mb-3">
-          <label for="kafic_sifra" class="form-label">Sifra</label>
-          <input type="password" class="form-control" id="kafic_sifra">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
+    <!-- Dugme -->
+    <button type="submit" class="btn btn-primary">Uloguj se</button>
+  
+  </form>
 </div>

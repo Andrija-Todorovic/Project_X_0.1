@@ -1,6 +1,23 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="container">
-    <h1>Uloguj se kao korisnik</h1>
+    <form action="/login/log_korisnik" method="POST" class="needs-validation" novalidate>
+        <h1>Uloguj se kao korisnik</h1>
+    
+        <!-- Email -->
+        <div class="form-group">
+          <label for="korisnik_email">E-mail</label>
+          <input type="email" class="form-control" id="korisnik_email" name="korisnik_email" required>
+        </div>
+          
+        <!-- Sifra -->
+        <div class="form-group">
+            <label for="korisnik_sifra">Sifra</label>
+            <input type="password" class="form-control" id="korisnik_sifra" name="korisnik_sifra" required>
+        </div>
+
+        <!-- Dugme -->
+        <button type="submit" class="btn btn-primary">Uloguj se</button>
+    </form>
 </div>
 
