@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') %>
+
+<% if(currentUser && data[0].korisnik_id === currentUser.korisnik_id){ %>
+    <div class="container">
+        <div class="row dugme mb-3 justify-content-center">
+            <a href="/korisnik/<%= data[0].korisnik_id %>/edit" class="btn btn-primary mr-5">Izmeni podatke</a>
+
+            <form action="/korisnik/<%= data[0].korisnik_id %>?_method=DELETE" method="POST">
+                <button class="btn btn-primary">Obrisi nalog</button>
+            </form>
+        </div>
+    </div>
+<% } %>
+
+<h1>Ime: <%= data[0].korisnik_ime %> </h1>

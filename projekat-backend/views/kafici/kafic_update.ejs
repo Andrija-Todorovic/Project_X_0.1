@@ -1,0 +1,72 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <h1>Izmeni informacije o kaficu</h1>
+
+    <div class="mt-4 mb-4">
+        <form action="/kafici/<%= data[0].kafic_id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h6>Podaci za logovanje</h6>
+
+                    <!-- Naziv -->
+                    <div class="form-group">
+                        <label for="kafic_naziv">Naziv</label>
+                        <input type="text" class="form-control" id="kafic_naziv" name="kafic_naziv" value="<%= data[0].kafic_naziv %>" required>
+                    </div>
+
+                    <!-- Adresa -->
+                    <div class="form-group">
+                        <label for="kafic_adresa">Adresa</label>
+                        <input type="text" class="form-control" id="kafic_adresa" name="kafic_adresa" value="<%= data[0].kafic_adresa %>" required>
+                    </div>
+            
+                    <!-- Grad -->
+                    <div class="form-group">
+                        <label for="grad">Grad</label>
+                        <input type="text" class="form-control" id="grad" name="grad" value="<%= data[0].grad %>" required>
+                    </div>
+                
+                    <!-- Drzava -->
+                    <div class="form-group">
+                        <label for="drzava">Drzava</label>
+                        <input type="text" class="form-control" id="drzava" name="drzava" value="<%= data[0].drzava %>" required>
+                    </div>
+
+                <div class="col-lg-6">
+
+                    <!-- Kapacitet -->
+                    <div class="form-group">
+                        <label for="kapacitet">Kapacitet</label>
+                        <input type="number" class="form-control" id="kapacitet" name="kapacitet" value="<%= data[0].kapacitet %>" required> 
+                    </div>
+
+                    <!-- Kapacitet -->
+                    <div class="form-group">
+                        <label for="slobodna_mesta">Broj slobodnih mesta</label>
+                        <input type="number" class="form-control" id="slobodna_mesta" name="slobodna_mesta" value="<%= data[0].slobodna_mesta %>" required> 
+                        <div id="helper" class="form-text">Upisite isti broj kao i za kapacitet</div>
+                    </div>
+
+                    <!-- Radno vreme -->
+                    <div class="form-group">
+                        <label for="radno_vreme">Radno vreme</label>
+                        <input type="text" class="form-control" id="radno_vreme" name="radno_vreme" value="<%= data[0].radno_vreme %>" required>
+                        <div id="helper" class="form-text">Primer: 09:00 - 23:00</div>
+                    </div>
+
+                    <!-- Opis -->
+                    <div class="form-group">
+                        <label for="kafic_opis">Kratak opis kafica</label>
+                        <textarea  type="text" class="form-control" id="kafic_opis" name="kafic_opis" rows="3" maxlength="200" required> <%= data[0].kafic_opis %> </textarea>
+                    </div>
+                </div>
+            </div>
+    
+            <hr>
+            <!-- Dugme -->
+            <button type="submit" class="btn btn-primary">Registruj se</button>
+        </form>
+    </div>
+</div>
+

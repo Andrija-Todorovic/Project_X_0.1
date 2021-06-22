@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <h1>Registruj se kao korisnik</h1>
+
+    <div class="mt-4 mb-4">
+        <form action="/korisnik/<%= data[0].korisnik_id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+                    <h6>Osnovni podaci o korisniku</h6>
+
+                    <!-- Ime -->
+                    <div class="form-group">
+                        <label for="korisnik_ime">Ime</label>
+                        <input type="text" class="form-control" id="korisnik_ime" name="korisnik_ime" value="<%= data[0].korisnik_ime %>" required>
+                    </div>
+            
+                    <!-- Prezime -->
+                    <div class="form-group">
+                        <label for="grad">Prezime</label>
+                        <input type="text" class="form-control" id="korisnik_prezime" name="korisnik_prezime" value="<%= data[0].korisnik_prezime %>" required>
+                    </div>
+                
+                    <!-- Datum rodjenja -->
+                    <div class="form-group">
+                        <label for="korisnik_datum_rodjenja">Datum Rodjenja</label>
+                        <input type="date" class="form-control" id="korisnik_datum_rodjenja" name="korisnik_datum_rodjenja" value="<%= data[0].korisnik_datum_rodjenja %>" required>
+                    </div>
+
+                    <!-- Pol -->
+                    <div class="form-group">
+                        <label for="korisnik_pol">Pol</label>
+                        <select class="form-select" name="korisnik_pol" id="korisnik_pol" value="<%= data[0].korisnik_pol %>">
+                            <option value="m">Muski</option>
+                            <option value="f">Zenski</option>
+                          </select>
+                    </div>
+            <hr>
+            <!-- Dugme -->
+            <button type="submit" class="btn btn-primary">Registruj se</button>
+        </form>
+    </div>
+</div>

@@ -24,7 +24,7 @@ router.get('/log_kafic', (req, res) => {
 // Logovanje korisnika
 router.post('/log_kafic', passport.authenticate('kafic-login', {
     successRedirect : '/',
-    failureRedirect : '/error',
+    failureRedirect : '/login/log_kafic',
     failureMessage : true 
 }), async(req, res) => {
 	if (req.body.remember) {
@@ -34,6 +34,13 @@ router.post('/log_kafic', passport.authenticate('kafic-login', {
 	}
 	res.redirect('/');
 });
+
+// Logout
+// router.get('/logout', (req, res) => {
+//     req.logout();
+//     req.flash('success', 'Uspesno ste se odjavili');
+//     res.redirect('/login');
+// })
 
 
 module.exports = router;

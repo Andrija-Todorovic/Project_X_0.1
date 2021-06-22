@@ -1,0 +1,18 @@
+<% layout('layouts/boilerplate') %>
+
+
+<% if(currentUser && data[0].kafic_id === currentUser.kafic_id){ %>
+    <div class="container">
+        <div class="row dugme mb-3 justify-content-center">
+            <a href="/kafici/<%= data[0].kafic_id %>/edit" class="btn btn-primary mr-5">Izmeni podatke</a>
+
+            <form action="/kafici/<%= data[0].kafic_id %>?_method=DELETE" method="POST">
+                <button class="btn btn-primary">Obrisi kafic</button>
+            </form>
+        </div>
+    </div>
+<% } %>
+
+
+
+<h1>Ime: <%= data[0].kafic_naziv %> </h1>

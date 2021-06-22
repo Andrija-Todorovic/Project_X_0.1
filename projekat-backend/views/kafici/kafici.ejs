@@ -6,15 +6,14 @@
 
 <% for (var i = 0; i < data.length; i++) { %>
     <div class="container">
-        <p>Kafic id: <%= data[i].kafic_id %> </p>
         <p>Naziv: <%= data[i].kafic_naziv %> </p>
-        <p>Email: <%= data[i].kafic_email %> </p>
         <p>Adresa: <%= data[i].kafic_adresa %> </p>
         <p>Grad: <%= data[i].grad %> </p>
-        <p>Drzava: <%= data[i].drzava %> </p>
         <p>Kapacitet: <%= data[i].Kapacitet %> </p>
         <p>Slobodna mesta: <%= data[i].slobodna_mesta %> </p>
         <p>Radno vreme: <%= data[i].radno_vreme %> </p>
+        <a href="/kafici/<%= data[i].kafic_id %>">Vise detalja</a>
+        <hr>
     </div>
 <% } %> 
 

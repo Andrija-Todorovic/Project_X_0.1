@@ -35,5 +35,12 @@ router.post('/log_korisnik', passport.authenticate('korisnik-login', {
 	res.redirect('/');
 });
 
+// Logout
+// router.get('/logout', (req, res) => {
+//     req.logout();
+//     req.flash('success', 'Uspesno ste se odjavili');
+//     res.redirect('/login');
+// })
+
 
 module.exports = router;
