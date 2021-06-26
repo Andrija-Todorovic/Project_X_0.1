@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
     }
   });
 });
+// filter
 
 // Prikazi kafic
 router.get('/:id', (req, res) => {
