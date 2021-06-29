@@ -19,6 +19,7 @@ var pocetna = require('./routes/pocetna');
 var kafici = require('./routes/kafici');
 var korisnik = require('./routes/korisnici');
 var rezervacija = require('./routes/rezervacija');
+var grad = require('./routes/grad');
 // Rute za registraciju
 var registracija = require('./routes/registracija/registracija');
 var reg_kafic = require('./routes/registracija/reg_kafic');
@@ -78,6 +79,7 @@ app.use('/korisnik', korisnik);
 app.use('/registracija', registracija, reg_kafic, reg_korisnik);
 app.use('/login', login, log_kafic, log_korisnik);
 app.use('/rezervacija', rezervacija);
+app.use('/grad', grad);
 
 app.get('/logout', (req, res) => {
     req.logout();

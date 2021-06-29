@@ -1,0 +1,8 @@
+DELIMITER $$
+
+CREATE PROCEDURE selectall_kafici()
+BEGIN
+    SELECT * FROM kafici;
+END$$
+
+DELIMITER ;

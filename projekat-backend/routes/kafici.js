@@ -13,7 +13,7 @@ const { query } = require('../config/baza_konekcija');
 // !RUTE
 // Prikazi sve kafice
 router.get('/', (req, res) => {
-  let sql = 'SELECT * FROM kafici';
+  let sql = 'call selectall_kafici()';
 
   db.query(sql, function(err, result) {
     if (err){
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     }
     else{
       res.render('kafici/kafici', {
-        data: result,
+        data: result[0],
         title: 'Kafici',      
         style: '',
         js: ''
@@ -29,12 +29,13 @@ router.get('/', (req, res) => {
     }
   });
 });
-// filter
 
 // Prikazi kafic
 router.get('/:id', (req, res) => {
   let id = req.params.id;
-  let sql = `SELECT * FROM kafici WHERE kafic_id = ${id}`;
+//  let sql = `SELECT * FROM kafici WHERE kafic_id = ${id}`;
+
+  let sql = `call kafic_select('${id}')`;
 
   db.query(sql, function(err, result) {
     if (err){
@@ -42,7 +43,7 @@ router.get('/:id', (req, res) => {
     }
     else{
       res.render('kafici/kafic', {
-        data: result,
+        data: result[0],
         title: result[0].kafic_naziv,      
         style: '',
         js: ''
@@ -54,7 +55,7 @@ router.get('/:id', (req, res) => {
 // Azuriranje kafica
 router.get('/:id/edit', (req, res) => {
   let id = req.params.id;
-  let sql = `SELECT * FROM kafici WHERE kafic_id = ${id}`;
+  let sql = `call kafic_select('${id}')`;
 
   db.query(sql, function(err, result) {
     if (err){
@@ -62,7 +63,7 @@ router.get('/:id/edit', (req, res) => {
     }
     else{
       res.render('kafici/kafic_update', {
-        data: result,
+        data: result[0],
         title: result[0].kafic_naziv,      
         style: '',
         js: ''
@@ -83,18 +84,7 @@ router.put('/:id', isLoggedIn, (req, res) => {
   let radno_vreme = req.body.radno_vreme;
   let kafic_opis = req.body.kafic_opis; 
 
-  let sql = `UPDATE kafici SET ? WHERE kafic_id = ${id}`;
-
-  db.query(sql, {
-                  kafic_naziv: kafic_naziv,
-                  kafic_adresa: kafic_adresa,
-                  grad: grad,
-                  drzava: drzava,
-                  kapacitet: kapacitet,
-                  slobodna_mesta: slobodna_mesta,
-                  radno_vreme: radno_vreme,
-                  kafic_opis: kafic_opis
-                }, function(err, result) {
+  db.query(`call kafic_update('${id}', '${kafic_naziv}', '${kafic_adresa}', '${grad}', '${drzava}', '${kapacitet}','${slobodna_mesta}','${radno_vreme}', '${kafic_opis}')`,  function(err, result) {
     if(err){
       console.log(err);
     }
@@ -108,9 +98,9 @@ router.put('/:id', isLoggedIn, (req, res) => {
 // Brisanje naloga 
 router.delete('/:id', isLoggedIn, (req, res) => {
   let id = req.params.id;
-  let sql = `DELETE FROM kafici WHERE kafic_id = ${id}`;
+  //let sql = `DELETE FROM kafici WHERE kafic_id = ${id}`;
 
-  db.query(sql, function(err, result) {
+  db.query(`call kafic_delete(${id})`, function(err, result) {
     if (!err){
       res.redirect(`/kafici`);
     }
@@ -119,8 +109,5 @@ router.delete('/:id', isLoggedIn, (req, res) => {
     }
   });
 });
-
-
-
 
 module.exports = router;
