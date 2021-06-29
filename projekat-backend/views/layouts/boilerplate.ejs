@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/glavni.css">
+    <link rel="stylesheet" href="/css/glavni.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="/css/<%= style %>">
+    <link rel="stylesheet" href="/css/<%= style %>" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/all.min.css" />
 
     <title><%= title %></title>
-</head>
-<body class="d-flex flex-column vh-100">
+  </head>
+  <body>
+        <%- include('../partials/navbar') %> <%- body %> <%-
+        include('../partials/footer') %>
 
-    <%- include('../partials/navbar') %>
-
-        <%- body %>
-
-    <%- include('../partials/footer') %>
-
-
-    
     <!-- jQery JavaScript -->
     <script src="/js/jquery.js"></script>
     <!-- Bootstrap JavaScript -->
@@ -36,5 +30,5 @@
     <script src="/js/all.min.js"></script>
     <!-- Page JS -->
     <script src="/js/<%= js %>"></script>
-</body>
+  </body>
 </html>

@@ -1,24 +1,103 @@
 <% layout('layouts/boilerplate') %>
-
+<!-- <% for (var i = 0; i < data.length; i++) { %>
 <div class="container">
-    <h1>Stranica za kafice</h1>
+<p>Naziv: <%= data[i].kafic_naziv %></p>
+<p>Grad: <%= data[i].grad %></p>
+<p>Kapacitet: <%= data[i].Kapacitet %></p>
+<p>Slobodna mesta: <%= data[i].slobodna_mesta %></p>
+<p>Radno vreme: <%= data[i].radno_vreme %></p>
+<a href="/kafici/<%= data[i].kafic_id %>">Vise detalja</a>
+<hr />
 </div>
+<% } %> -->
 
-<% for (var i = 0; i < data.length; i++) { %>
-    <div class="container">
-        <p>Naziv: <%= data[i].kafic_naziv %> </p>
-        <p>Adresa: <%= data[i].kafic_adresa %> </p>
-        <p>Grad: <%= data[i].grad %> </p>
-        <p>Kapacitet: <%= data[i].Kapacitet %> </p>
-        <p>Slobodna mesta: <%= data[i].slobodna_mesta %> </p>
-        <p>Radno vreme: <%= data[i].radno_vreme %> </p>
-        <a href="/kafici/<%= data[i].kafic_id %>">Vise detalja</a>
-        <hr>
+<main class="selection">
+  <div class="theme-wrap">
+    <div class="roww product-grid">
+      <div class="col col-2">
+        <div class="filter-bar">
+          <div class="drzave">
+            <div class="spec-title">Drzave</div>
+            <div class="filter">
+              <button onclick="prikazi('srb')">Srbija</button>
+              <button onclick="prikazi('mac')">Makedonija</button>
+            </div>
+          </div>
+          <div class="gradovi" id="srbija" style="display: none">
+            <div class="spec-title">Gradovi</div>
+            <div class="filter">
+              <a href="">Nis</a>
+              <a href="">Leskovac</a>
+              <a href="">Prokuplje</a>
+              <a href="">Vranje</a>
+              <a href="">Pirot</a>
+              <a href="">Bela Palanka</a>
+            </div>
+          </div>
+          <div class="gradovi" id="makedonija" style="display: none">
+            <div class="spec-title">Gradovi</div>
+            <div class="filter">
+              <a href="">Skoplje</a>
+              <a href="">Gostivar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-bar">
+        <div class="nav-title-grid">
+          <h1>Kafici</h1>
+          <span>(<%= data.length%>)</span>
+        </div>
+        <div class="control-select">
+          <div class="control">
+            <label for="sort">Sortiraj po:</label>
+            <select name="sort">
+              <option value="popularnost" selected>Popularnosti</option>
+              <option value="naziv">Nazivu</option>
+              <option value="slobodna_mesta">Broju slobodnih mesta</option>
+            </select>
+          </div>
+        </div>
+        <div class="container main-box">
+          <div class="row">
+            <% for (var i = 0; i < data.length; i++) { %>
+            <div class="col-lg-3 box">
+              <div class="naziv">
+                <a href="kafic.html"><h1><%= data[i].kafic_naziv %></h1></a>
+              </div>
+              <div class="vise">
+                <a href="/kafici/<%= data[i].kafic_id %>">Vise detalja</a>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
     </div>
-<% } %> 
+  </div>
+</main>
 
-<!-- 
-    Stranica koja prikazuje sve kafice korisnicima
-    Ovde se implementiraju funkcije za sortiranje i procedura za Select svih kafica
-    Obavezna paginacija
- -->
+<!-- End Main -->
+
+<!-- JS fukcija -->
+<script>
+  function prikazi(name) {
+    if (name == "srb") {
+      var x = document.getElementById("srbija");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    } else if ((name = "mac")) {
+      var x = document.getElementById("makedonija");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  }
+</script>
+<!-- End JS fukcija -->

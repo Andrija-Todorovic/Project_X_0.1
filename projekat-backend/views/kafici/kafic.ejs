@@ -1,18 +1,38 @@
 <% layout('layouts/boilerplate') %>
 
-
-<% if(currentUser && data[0].kafic_id === currentUser.kafic_id){ %>
-    <div class="container">
-        <div class="row dugme mb-3 justify-content-center">
-            <a href="/kafici/<%= data[0].kafic_id %>/edit" class="btn btn-primary mr-5">Izmeni podatke</a>
-
-            <form action="/kafici/<%= data[0].kafic_id %>?_method=DELETE" method="POST">
-                <button class="btn btn-primary">Obrisi kafic</button>
-            </form>
+<main>
+    <div class="container kafic-prikaz">
+        <div class="kategorija">
+            <div class="">
+                <span>Nazad na kafice --> <a href="/kafici">Kafici</a></span>
+            </div>
+            <div class="admin-layout">
+                <% if(currentUser && data[0].kafic_id === currentUser.kafic_id){ %>
+                    <div class="update">
+                        <a href="/kafici/<%= data[0].kafic_id %>/edit" class="btn">Izmeni podatke</a>
+                    </div>
+                    <div class="delete">
+                        <form action="/kafici/<%= data[0].kafic_id %>?_method=DELETE" method="POST">
+                            <button class="btn">Obrisi kafic</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="head">
+            <div class="title">
+                <h1><%= data[0].kafic_naziv %></h1>
+            </div>
+            <div class="info">
+                <div class="adresa">
+                    <p>Adresa: <span><%= data[0].kafic_adresa %></span></p>
+                    <p>Radno vreme: <span><%= data[0].radno_vreme %></span></p>
+                    <p>Broj slobodnih mesta: <span><%= data[0].slobodna_mesta %></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <p><%= data[0].kafic_opis %></p>
         </div>
     </div>
-<% } %>
-
-
-
-<h1>Ime: <%= data[0].kafic_naziv %> </h1>
+</main>

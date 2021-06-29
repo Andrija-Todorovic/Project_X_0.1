@@ -1,30 +1,28 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="container">
-    <h1>Registruj se kao kafic</h1>
-
-    <div class="mt-4 mb-4">
+    <div class="container heading-reg">
+        <h1>Registruj se kao kafic</h1>
+      </div>
+    <div class="container reg-kafic">
         <form action="/registracija/reg_kafic" method="POST" class="needs-validation" novalidate>
             <div class="row">
                 <div class="col-lg-6">
                     <h6>Podaci za logovanje</h6>
 
                     <!-- Naziv -->
-                    <div class="form-group">
-                        <label for="kafic_naziv">Naziv</label>
-                        <input type="text" class="form-control" id="kafic_naziv" name="kafic_naziv" required>
+                    <div class="form-group mb-3 mt-4">
+                        <input type="text" class="form-control" id="kafic_naziv" name="kafic_naziv" placeholder="Naziv kafica *" required/>
                     </div>
             
                     <!-- Email -->
-                    <div class="form-group">
-                        <label for="kafic_email">E-mail</label>
-                        <input type="text" class="form-control" id="kafic_email" name="kafic_email" required>
+                    <div class="form-group mb-3">
+                        <input type="email" class="form-control" id="kafic_email" name="kafic_email" placeholder="Email kafica *" required/>
                     </div>
                 
                     <!-- Sifra -->
-                    <div class="form-group">
-                        <label for="kafic_sifra">Sifra</label>
-                        <input type="password" class="form-control" id="kafic_sifra" name="kafic_sifra" required>
+                    <div class="form-group mb-3">
+                        <input type="password" class="form-control" id="kafic_sifra" name="kafic_sifra" placeholder="Sifra kafica *" required/>
                     </div>
                 </div>
 
@@ -32,55 +30,53 @@
                     <h6>Osnovni podaci o kaficu</h6>
 
                     <!-- Adresa -->
-                    <div class="form-group">
-                        <label for="kafic_adresa">Adresa</label>
-                        <input type="text" class="form-control" id="kafic_adresa" name="kafic_adresa" required>
+                    <div class="form-group mb-3 mt-4">
+                        <input type="text" class="form-control" id="kafic_adresa" name="kafic_adresa" placeholder="Adresa kafica *" required/>
                     </div>
             
                     <!-- Grad -->
-                    <div class="form-group">
-                        <label for="grad">Grad</label>
-                        <input type="text" class="form-control" id="grad" name="grad" required>
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" id="grad" name="grad" placeholder="Grad *" required/>
                     </div>
                 
                     <!-- Drzava -->
-                    <div class="form-group">
-                        <label for="drzava">Drzava</label>
-                        <input type="text" class="form-control" id="drzava" name="drzava" required>
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" id="drzava" name="drzava" placeholder="Drzava *" required/>
                     </div>
 
                     <!-- Kapacitet -->
-                    <div class="form-group">
-                        <label for="kapacitet">Kapacitet</label>
-                        <input type="number" class="form-control" id="kapacitet" name="kapacitet" required> 
+                    <div class="form-group mb-3">
+                        <input type="number" class="form-control" id="kapacitet" name="kapacitet" placeholder="Kapacitet *" required/>
                     </div>
 
                     <!-- Kapacitet -->
-                    <div class="form-group">
-                        <label for="slobodna_mesta">Broj slobodnih mesta</label>
-                        <input type="number" class="form-control" id="slobodna_mesta" name="slobodna_mesta" required> 
-                        <div id="helper" class="form-text">Upisite isti broj kao i za kapacitet</div>
+                    <div class="form-group mb-4">
+                        <input type="number" class="form-control" id="slobodna_mesta" name="slobodna_mesta" placeholder="Broj slobodnih mesta *" required/> 
+                        <div id="helper" class="form-text">--Upisite isti broj kao i za kapacitet--</div>
                     </div>
 
                     <!-- Radno vreme -->
-                    <div class="form-group">
-                        <label for="radno_vreme">Radno vreme</label>
-                        <input type="text" class="form-control" id="radno_vreme" name="radno_vreme" required>
-                        <div id="helper" class="form-text">Primer: 09:00 - 23:00</div>
+                    <div class="form-group mb-4">
+                        <input type="text" class="form-control" id="radno_vreme" name="radno_vreme" placeholder="Radno vreme *" required/> 
+                        <div id="helper" class="form-text">--Primer: 09:00 - 23:00--</div>
                     </div>
 
                     <!-- Opis -->
                     <div class="form-group">
-                        <label for="kafic_opis">Kratak opis kafica</label>
-                        <textarea  type="text" class="form-control" id="kafic_opis" name="kafic_opis" rows="3" maxlength="200" required></textarea>
+                        <textarea type="text" class="form-control" id="kafic_opis" name="kafic_opis" placeholder="Kratak opis *" rows="3" maxlength="200"required></textarea>
                     </div>
                 </div>
             </div>
     
             <hr>
             <!-- Dugme -->
-            <button type="submit" class="btn btn-primary">Registruj se</button>
+            <input type="submit" class="btn-submit" value="Registruj se">
+            <div class="reg">
+                <h5>Registruj se kao korisnik</h5>
+                <a href="/registracija/reg_korisnik">Registruj se</a>
+            </div>
         </form>
     </div>
 </div>
+<span class="spacing">a</span>
 

@@ -1,16 +1,25 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="container">
-    <h1>Registracija Pocetna</h1>
-
-    <button type="button" class="btn btn-outline-primary">
-        <a href="/registracija/reg_kafic" style="text-decoration: none; color: black;">Registracija kafica</a>
-    </button>
-    <button type="button" class="btn btn-outline-danger">
-        <a href="/registracija/reg_korisnik" style="text-decoration: none; color: black;">Registracija korisnika</a>
-    </button>
-</div>
-
+<!-- Main -->
+<main class="selection">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-md-6 login-form-1">
+        <h2>Registracija kafica</h2>
+        <button type="button" class="btnSubmit">
+          <a href="/registracija/reg_kafic">Registracija</a>
+        </button>
+      </div>
+      <div class="col-md-6 login-form-2">
+        <h2>Registracija korisnika</h2>
+        <button type="button" class="btnSubmit">
+          <a href="/registracija/reg_korisnik">Registracija</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- End Main -->
 <!-- 
     Ovde se biraju 2 opcije da li se registrujes kao korisnik ili kao kafic 
 -->

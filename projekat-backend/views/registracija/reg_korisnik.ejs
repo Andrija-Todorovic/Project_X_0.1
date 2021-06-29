@@ -1,24 +1,23 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="container">
-    <h1>Registruj se kao korisnik</h1>
-
-    <div class="mt-4 mb-4">
+    <div class="container heading-reg">
+        <h1>Registruj se kao korisnik</h1>
+      </div>
+    <div class="container reg-korisnici">
         <form action="/registracija/reg_korisnik" method="POST" class="needs-validation" novalidate>
             <div class="row">
                 <div class="col-lg-6">
                     <h6>Podaci za logovanje</h6>
             
                     <!-- Email -->
-                    <div class="form-group">
-                        <label for="korisnik_email">E-mail</label>
-                        <input type="text" class="form-control" id="korisnik_email" name="korisnik_email" required>
+                    <div class="form-group mb-3 mt-4">
+                        <input type="email" class="form-control" id="korisnik_email" name="korisnik_email" placeholder="Email korisnika *" required/>
                     </div>
-                
+            
                     <!-- Sifra -->
-                    <div class="form-group">
-                        <label for="korisnik_sifra">Sifra</label>
-                        <input type="password" class="form-control" id="korisnik_sifra" name="korisnik_sifra" required>
+                    <div class="form-group mb-3">
+                        <input type="password" class="form-control" id="korisnik_sifra" name="korisnik_sifra" placeholder="Sifra korisnika *" required/>
                     </div>
                 </div>
 
@@ -26,27 +25,25 @@
                     <h6>Osnovni podaci o korisniku</h6>
 
                     <!-- Ime -->
-                    <div class="form-group">
-                        <label for="korisnik_ime">Ime</label>
-                        <input type="text" class="form-control" id="korisnik_ime" name="korisnik_ime" required>
+                    <div class="form-group mt-4">
+                        <input type="text" class="form-control" id="korisnik_ime" name="korisnik_ime" placeholder="Ime korisnika *" required/>
                     </div>
             
                     <!-- Prezime -->
-                    <div class="form-group">
-                        <label for="grad">Prezime</label>
-                        <input type="text" class="form-control" id="korisnik_prezime" name="korisnik_prezime" required>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" id="korisnik_prezime" name="korisnik_prezime" placeholder="Prezime korisnika *" required/>
                     </div>
                 
                     <!-- Datum rodjenja -->
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <label for="korisnik_datum_rodjenja">Datum Rodjenja</label>
                         <input type="date" class="form-control" id="korisnik_datum_rodjenja" name="korisnik_datum_rodjenja" required>
                     </div>
 
                     <!-- Pol -->
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <label for="korisnik_pol">Pol</label>
-                        <select class="form-select" name="korisnik_pol" id="korisnik_pol">
+                        <select class="form-select form-control" name="korisnik_pol" id="korisnik_pol">
                             <option value="m">Muski</option>
                             <option value="f">Zenski</option>
                           </select>
@@ -56,7 +53,12 @@
     
             <hr>
             <!-- Dugme -->
-            <button type="submit" class="btn btn-primary">Registruj se</button>
+            <input type="submit" class="btn-submit" value="Registruj se">
+            <div class="reg">
+                <h5>Registruj se kao kafic</h5>
+                <a href="/registracija/reg_kafic">Registruj se</a>
+            </div>
         </form>
     </div>
 </div>
+<span class="spacing">a</span>

@@ -1,23 +1,28 @@
 <% layout('layouts/boilerplate') %>
-
-<div class="container">
-    <form action="/login/log_korisnik" method="POST" class="needs-validation" novalidate>
-        <h1>Uloguj se kao korisnik</h1>
-    
-        <!-- Email -->
-        <div class="form-group">
-          <label for="korisnik_email">E-mail</label>
-          <input type="email" class="form-control" id="korisnik_email" name="korisnik_email" required>
-        </div>
-          
-        <!-- Sifra -->
-        <div class="form-group">
-            <label for="korisnik_sifra">Sifra</label>
-            <input type="password" class="form-control" id="korisnik_sifra" name="korisnik_sifra" required>
-        </div>
-
-        <!-- Dugme -->
-        <button type="submit" class="btn btn-primary">Uloguj se</button>
-    </form>
+<div class="container heading">
+  <h1>Uloguj se kao korisnik</h1>
 </div>
+<div class="container log-kafic">
+  <form action="/login/log_korisnik" method="POST" class="needs-validation" novalidate>
+    <div class="log">
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" class="form-control" id="korisnik_email" name="korisnik_email" placeholder="Vas email *" required/>
+      </div>
+        
+      <!-- Sifra -->
+      <div class="form-group mt-3">
+        <input type="password" class="form-control" id="korisnik_sifra" name="korisnik_sifra" placeholder="Vasa lozinka *" required/>
+      </div>
+  
+      <!-- Dugme -->
+      <button type="submit" class="btn-submit">Uloguj se</button>
+    </div>
 
+    <div class="reg">
+      <h5>Nemate nalog?</h5>
+      <a href="/registracija">Registruj se</a>
+    </div>
+  </form>
+</div>
+<span class="spacing">a</span>

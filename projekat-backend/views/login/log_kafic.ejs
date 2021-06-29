@@ -1,23 +1,28 @@
 <% layout('layouts/boilerplate') %>
-
-<div class="container">
+<div class="container heading">
+  <h1>Uloguj se kao kafic</h1>
+</div>
+<div class="container log-kafic">
   <form action="/login/log_kafic" method="POST" class="needs-validation" novalidate>
-    <h1>Uloguj se kao kafic</h1>
-
-    <!-- Email -->
-    <div class="form-group">
-      <label for="kafic_email">E-mail</label>
-      <input type="email" class="form-control" id="kafic_email" name="kafic_email" required>
-    </div>
-      
-    <!-- Sifra -->
-    <div class="form-group">
-        <label for="kafic_sifra">Sifra</label>
-        <input type="password" class="form-control" id="kafic_sifra" name="kafic_sifra" required>
-    </div>
-
-    <!-- Dugme -->
-    <button type="submit" class="btn btn-primary">Uloguj se</button>
+    <div class="log">
+      <!-- Email -->
+      <div class="form-group my-4">
+        <input type="email" class="form-control" id="kafic_email" name="kafic_email" placeholder="Vas email *" required/>
+      </div>
+        
+      <!-- Sifra -->
+      <div class="form-group">
+        <input type="password" class="form-control" id="kafic_sifra" name="kafic_sifra" placeholder="Vasa lozinka *" required/>
+      </div>
   
+      <!-- Dugme -->
+      <button type="submit" class="btn-submit">Uloguj se</button>
+    </div>
+
+    <div class="reg">
+      <h5>Nemate nalog?</h5>
+      <a href="/registracija">Registruj se</a>
+    </div>
   </form>
 </div>
+<span class="spacing">a</span>

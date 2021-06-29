@@ -1,15 +1,24 @@
 <% layout('layouts/boilerplate') %>
-
-<div class="container">
-    <h1>Login Pocetna</h1>
-
-    <button type="button" class="btn btn-outline-primary">
-        <a href="/login/log_kafic" style="text-decoration: none; color: black;">Uloguj se kao kafic</a>
-    </button>
-    <button type="button" class="btn btn-outline-danger">
-        <a href="/login/log_korisnik" style="text-decoration: none; color: black;">Uloguj se kao korisnik</a>
-    </button>
-</div>
+<!-- Main -->
+<main class="selection">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-md-6 login-form-1">
+        <h2>Uloguj se kao kafic</h2>
+        <button type="button" class="btnSubmit">
+          <a href="/login/log_kafic">Login</a>
+        </button>
+      </div>
+      <div class="col-md-6 login-form-2">
+        <h2>Uloguj se kao korisnik</h2>
+        <button type="button" class="btnSubmit">
+          <a href="/login/log_korisnik">Login</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- End Main -->
 
 <!-- 
     Ovde se biraju 2 opcije da li se ulogujes kao korisnik ili kao kafic 

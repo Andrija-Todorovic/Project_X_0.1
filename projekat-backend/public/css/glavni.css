@@ -1,0 +1,496 @@
+/* Navbar */
+.navbar-collapse {
+  flex-grow: 0;
+}
+.nav-style {
+  background-image: linear-gradient(#5c5857c4, #2b2a2ad5);
+}
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-collapse ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f05837;
+  display: block;
+  margin: auto;
+}
+.navbar-collapse ul li:hover::after {
+  width: 100%;
+  transition: 0.5s;
+}
+.nav-style .navbar-collapse a:hover {
+  color: rgb(255, 255, 255);
+}
+.navbar-collapse ul li a {
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.5px;
+  font-size: 17px;
+  font-weight: 500;
+}
+/* End Navbar */
+
+/* Pocetna */
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(4, 9, 30, 0.6),
+      rgba(255, 255, 255, 0.137)
+    ),
+    url("/images/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.text-box {
+  font-weight: 700;
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  border: none;
+  background-color: rgba(4, 9, 30, 0.466);
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+.text-box span {
+  color: #f05837;
+  font-size: 60px;
+  font-weight: 700;
+}
+/* End Pocetna */
+
+/* Login pocetna */
+.login-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 10px 0px;
+}
+.login-form-1 {
+  text-align: center;
+  padding: 8em 0;
+  background: #282726;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h2 {
+  color: rgba(255, 255, 255, 0.925);
+}
+.login-form-2 {
+  text-align: center;
+  padding: 8em 0;
+  background: #f05837;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.btnSubmit {
+  margin-top: 50px;
+  border: 1px solid rgba(128, 128, 128, 0.644);
+  border-radius: 20px;
+  padding: 4px 43px;
+}
+.btnSubmit:hover {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.712);
+  transition: 0.1s;
+}
+.btnSubmit a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #f05837;
+}
+/* End Login pocetna */
+
+/* Login Kafici */
+.heading {
+  width: 500px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: #f05837;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.heading h1 {
+  margin: 40px;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 35px;
+}
+.log-kafic {
+  width: 500px;
+  height: 70vh;
+  background-color: whitesmoke;
+  padding: 60px 10px;
+  border: 1px solid floralwhite;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.log-kafic .form-control {
+  border-radius: 20px;
+}
+.log-kafic .btn-submit {
+  width: 100%;
+  margin: 40px 0;
+  padding: 2px 0;
+  font-size: 25px;
+  background-color: #f05837;
+  color: whitesmoke;
+  border: none;
+  border-radius: 20px;
+}
+.log-kafic .btn-submit:hover {
+  font-size: 27px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.log-kafic .reg {
+  text-align: center;
+  position: relative;
+  padding-top: 45px;
+}
+.log-kafic .reg h5 {
+  color: #aaaaaa;
+  font-size: 22px;
+}
+.log-kafic .reg a {
+  text-decoration: none;
+  color: #f05837;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.log-kafic .reg a:hover {
+  font-size: 21px;
+  transition: 0.3s;
+}
+.spacing {
+  margin: 50px 0;
+  color: white;
+}
+/* End Login Kafici */
+
+/* Registracija Kafica */
+.heading-reg {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: #f05837;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.heading-reg h1 {
+  margin: 40px;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 35px;
+}
+.reg-kafic {
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 60px 10px;
+  border: 1px solid floralwhite;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.reg-kafic .form-control {
+  border-radius: 20px;
+}
+.reg-kafic .btn-submit {
+  width: 100%;
+  margin: 40px 0;
+  padding: 2px 0;
+  font-size: 25px;
+  background-color: #f05837;
+  color: whitesmoke;
+  border: none;
+  border-radius: 20px;
+}
+.reg-kafic .btn-submit:hover {
+  font-size: 27px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.reg-kafic .reg {
+  text-align: center;
+  position: relative;
+  padding-top: 45px;
+}
+.reg-kafic .reg h5 {
+  color: #aaaaaa;
+  font-size: 22px;
+}
+.reg-kafic .reg a {
+  text-decoration: none;
+  color: #f05837;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.reg-kafic .reg a:hover {
+  font-size: 21px;
+  transition: 0.3s;
+}
+.spacing {
+  margin: 50px 0;
+  color: white;
+}
+/* End Registracija Kafica */
+
+/* Registracija Korisnici */
+.heading-reg {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: #f05837;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.heading-reg h1 {
+  margin: 40px;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 35px;
+}
+.reg-korisnici {
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 60px 10px;
+  border: 1px solid floralwhite;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.reg-korisnici .form-control {
+  border-radius: 20px;
+}
+.reg-korisnici .btn-submit {
+  width: 100%;
+  margin: 40px 0;
+  padding: 2px 0;
+  font-size: 25px;
+  background-color: #f05837;
+  color: whitesmoke;
+  border: none;
+  border-radius: 20px;
+}
+.reg-korisnici .btn-submit:hover {
+  font-size: 27px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.reg-korisnici .reg {
+  text-align: center;
+  position: relative;
+  padding-top: 45px;
+}
+.reg-korisnici .reg h5 {
+  color: #aaaaaa;
+  font-size: 22px;
+}
+.reg-korisnici .reg a {
+  text-decoration: none;
+  color: #f05837;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.reg-korisnici .reg a:hover {
+  font-size: 21px;
+  transition: 0.3s;
+}
+.spacing {
+  margin: 50px 0;
+  color: white;
+}
+/* End Registracija Korisnici */
+
+/* Kafici */
+.col {
+  position: relative;
+  float: left;
+}
+.col .col-2 {
+  width: 16.66666666%;
+}
+.nav-title-grid {
+  flex-grow: 1;
+  display: flex;
+}
+.nav-title-grid h1 {
+  font-size: 2em;
+  color: #000;
+  margin: 0;
+  border: none;
+  font-weight: 200;
+  padding: 3px;
+}
+.nav-title-grid span {
+  font-size: 2em;
+  color: #000;
+  margin: 0;
+  border: none;
+  font-weight: 200;
+  padding: 0;
+}
+.control-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+.control-select .control label {
+  display: flex;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.55);
+}
+.filter-bar {
+  margin-left: 30px;
+}
+.filter-bar .filter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.filter-bar .filter button {
+  border: none;
+  background-color: white;
+  width: 0px;
+}
+.filter-bar .filter button:hover {
+  color: rgba(73, 72, 72, 0.808);
+}
+.filter-bar .filter a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+}
+.filter-bar .filter a:hover {
+  color: rgba(73, 72, 72, 0.808);
+}
+.filter-bar .spec-title {
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0;
+}
+.main-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.main-box .box {
+  display: grid;
+  justify-content: center;
+  width: 230px;
+  min-height: 35vh;
+  margin: 10px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.164);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px #aaaaaa;
+}
+.main-box .box h1 {
+  color: black;
+  padding-top: 10px;
+  padding-left: 5px;
+  font-size: 26px;
+  font-weight: 500;
+}
+.main-box .box a {
+  text-decoration: none;
+}
+.main-box .box p {
+  font-size: 14px;
+  padding: 4px 0px;
+}
+/* End Kafici */
+
+/* Kafic */
+.kafic-prikaz {
+  margin-top: 90px;
+}
+.kafic-prikaz .head {
+  display: flex;
+  justify-content: space-between;
+}
+.kafic-prikaz .kategorija {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(121, 121, 121, 0.699);
+  font-size: 16px;
+  font-weight: 600;
+}
+.kafic-prikaz .kategorija .admin-layout {
+  display: flex;
+}
+.kafic-prikaz .kategorija a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+.kafic-prikaz .kategorija a:hover {
+  color: rgba(54, 53, 53, 0.877);
+}
+.kafic-prikaz .adresa {
+  border: 1px solid rgba(121, 121, 121, 0.699);
+  padding: 20px;
+  font-size: 18px;
+}
+.kafic-prikaz .about {
+  margin-top: 100px;
+  color: rgb(63, 62, 62);
+  font-weight: 400;
+}
+
+.admin-layout .update a {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  padding: 1px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #f05837;
+}
+.admin-layout .update a:hover {
+  color: #fff;
+  background-color: #f05937e7;
+}
+.admin-layout .delete button {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  padding: 1px 10px;
+  margin-right: 10px;
+  background-color: #f05837;
+}
+.admin-layout .delete button:hover {
+  color: #fff;
+  background-color: #f05937e7;
+}
+
+/* End Kafic */
