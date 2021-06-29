@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <h1>Rezervacija mesta</h1>
+
+    <form action="/rezervacija" method="POST" class="needs-validation" novalidate>
+        <!-- Kafic id -->
+        <div class="form-group">
+            <label for="kafic_id">Kafic:</label>
+            <select class="form-select" aria-label="Default select example" name="kafic_id">
+                <option selected>Izaberi kafic</option>
+                <% for (var i = 0; i < data.length; i++) { %>
+                    <option value="<%= data[i].kafic_id %>" ><%= data[i].kafic_naziv %></option>
+                <% } %> 
+            </select>
+        </div>
+
+        <!-- Broj mesta za rezervaciju -->
+        <div class="form-group">
+            <label for="broj_mesta">Broj mesta</label>
+            <input type="number" class="form-control" id="broj_mesta" name="broj_mesta" min="1" max="10" required >
+            <div id="helper" class="form-text">Maksimalno 10 slobodnih mesta mozete da rezervisete</div>
+        </div>
+
+        <!-- Dugme -->
+        <button type="submit" class="btn btn-primary mt-3">Napravi rezervaciju</button>
+    </form>
+
+    <!-- Napomena -->
+    <p class="mt-5">Rezervacija traje 30 minuta </p>
+</div>
