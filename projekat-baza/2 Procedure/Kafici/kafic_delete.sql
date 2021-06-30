@@ -1,8 +1,8 @@
 DELIMITER $$
 
-CREATE PROCEDURE korisnik_delete(IN unos_id INT)
+CREATE PROCEDURE kafic_delete(IN unos_id INT)
 BEGIN
-    DELETE FROM korisnici WHERE korisnik_id = unos_id;
+    DELETE FROM kafici WHERE kafic_id = unos_id;
 END$$
 
 DELIMITER ;
